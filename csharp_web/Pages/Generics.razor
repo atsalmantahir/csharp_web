@@ -1,0 +1,73 @@
+﻿@page "/generics"
+
+<h3>Generics</h3>
+
+<p>Generics means the general form, not specific form. In C#, generics means not specific to a specific type</p>
+<p>C# allows you to define generic classes, interfaces, abstract classes, fields, methods, static methods, properties, events
+    delegates, and operator using the type parameter and without the specified data type. 
+</p>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Basic Defination</h5>
+    </div>
+    <div class="card-body">
+        <pre>
+            <code class="language-csharp">
+                class MyClass &ltT&gt
+                {
+                    public T Data { get; set; }
+                }
+            </code>
+        </pre>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Multiple Generics</h5>
+    </div>
+    <div class="card-body">
+        <pre>
+            <code>
+                class KeyValuePair&ltTKey, TValue&gt
+                {
+                    public TKey Key { get; set; }
+                    public TValue Value { get; set; }
+                }
+            </code>
+        </pre>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Example</h5>
+    </div>
+    <div class="card-body">
+        <pre>
+        <code>
+            DataStore&ltstring&gt strStore = new DataStore&ltstring&gt();
+            strStore.Data = "Hello World!";
+            //strStore.Data = 123; // compile-time error
+
+            DataStore&ltint&gt intStore = new DataStore&ltint&gt();
+            intStore.Data = 100;
+            //intStore.Data = "Hello World!"; // compile-time error
+
+            KeyValuePair&ltint, string&gt kvp1 = new KeyValuePair&ltint, string&gt();
+            kvp1.Key = 100;
+            kvp1.Value = "Hundred";
+
+            KeyValuePair&ltstring, string&gt kvp2 = new KeyValuePair&ltstring, string&gt();
+            kvp2.Key = "IT";
+            kvp2.Value = "Information Technology";
+            </code>
+        </pre>
+    </div>
+</div>
+
+
+@code {
+
+}

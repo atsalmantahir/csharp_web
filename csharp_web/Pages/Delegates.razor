@@ -1,0 +1,38 @@
+﻿@page "/delegates";
+
+<h3>Delegates</h3>
+
+<p>What if we want to pass a function as paramter? How does c# handles the callback functions or event handler? The answer is - delegate
+    The delegate is a reference type data type that defines the method signature.
+</p>
+
+
+<div class="card">
+    <div class="card-header">
+        <h5>Syntax</h5>
+    </div>
+    <div class="card-body">
+        <pre>
+            <code class="language-csharp">
+                [access modifier] delegate [return type] [delegate name]([paramters])
+            </code>
+        </pre>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Declaration</h5>
+    </div>
+    <div class="card-body">
+        <pre>
+        <code class="language-csharp">
+                public delegate void MyDelegate(string s);
+            </code>
+        </pre>
+    </div>
+</div>
+
+@code {
+
+}
