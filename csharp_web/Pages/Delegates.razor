@@ -6,6 +6,13 @@
     The delegate is a reference type data type that defines the method signature.
 </p>
 
+<p>There are three steps involved while working with delegates:</p>
+
+<ol>
+    <li>Declare a delegate</li>
+    <li>Set a target method</li>
+    <li>Invoke a delegate</li>
+</ol>
 
 <div class="card">
     <div class="card-header">
@@ -28,6 +35,35 @@
         <pre>
         <code class="language-csharp">
                 public delegate void MyDelegate(string s);
+            </code>
+        </pre>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-header">
+        <h5>Example</h5>
+    </div>
+    <div class="card-body">
+        <pre>
+        <code class="language-csharp">
+                public delegate void MyDelegate(string s);
+
+                MyDelegate del = new MyDelegate(MethodA);
+
+                //OR
+
+                MyDelegate del = MethodA;
+
+                //OR
+
+                MyDelegate del = (string msg) =&gt; Console.WriteLine(msg);
+
+                static void MethodA(string message)
+                {
+                    Console.WriteLine(message);
+                }
             </code>
         </pre>
     </div>
